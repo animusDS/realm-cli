@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.data
 {
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
    
    public class MoveRecord
    {
@@ -20,7 +20,7 @@ package kabam.rotmg.messaging.impl.data
          this.y_ = y;
       }
       
-      public function writeToOutput(data:IDataOutput) : void
+      public function writeToOutput(data:ByteArray) : void
       {
          data.writeInt(this.time_);
          data.writeFloat(this.x_);

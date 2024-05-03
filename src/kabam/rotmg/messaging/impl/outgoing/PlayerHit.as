@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.outgoing
 {
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
    
    public class PlayerHit extends OutgoingMessage
    {
@@ -15,7 +15,7 @@ package kabam.rotmg.messaging.impl.outgoing
          super(id,callback);
       }
       
-      override public function writeToOutput(data:IDataOutput) : void
+      override public function writeToOutput(data:ByteArray) : void
       {
          data.writeByte(this.bulletId_);
          data.writeInt(this.objectId_);

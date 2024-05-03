@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.outgoing
 {
-   import flash.utils.IDataInput;
+   import flash.utils.ByteArray;
    import kabam.lib.net.impl.Message;
    
    public class OutgoingMessage extends Message
@@ -12,7 +12,7 @@ package kabam.rotmg.messaging.impl.outgoing
          super(id,callback);
       }
       
-      override public final function parseFromInput(data:IDataInput) : void
+      override public final function parseFromInput(data:ByteArray) : void
       {
          throw new Error("Client should not receive " + id + " messages");
       }

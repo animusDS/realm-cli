@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.data
 {
-   import flash.utils.IDataInput;
+   import flash.utils.ByteArray;
    
    public class GroundTileData
    {
@@ -17,7 +17,7 @@ package kabam.rotmg.messaging.impl.data
          super();
       }
       
-      public function parseFromInput(data:IDataInput) : void
+      public function parseFromInput(data:ByteArray) : void
       {
          this.x_ = data.readShort();
          this.y_ = data.readShort();

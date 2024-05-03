@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.data
 {
-   import flash.utils.IDataInput;
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
+   import flash.utils.ByteArray;
    
    public class StatData
    {
@@ -139,7 +139,7 @@ package kabam.rotmg.messaging.impl.data
          }
       }
       
-      public function parseFromInput(data:IDataInput) : void
+      public function parseFromInput(data:ByteArray) : void
       {
          this.statType_ = data.readUnsignedByte();
          if(!this.isStringStat())
@@ -152,7 +152,7 @@ package kabam.rotmg.messaging.impl.data
          }
       }
       
-      public function writeToOutput(data:IDataOutput) : void
+      public function writeToOutput(data:ByteArray) : void
       {
          data.writeByte(this.statType_);
          if(!this.isStringStat())

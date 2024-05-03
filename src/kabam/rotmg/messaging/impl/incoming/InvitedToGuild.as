@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.incoming
 {
-   import flash.utils.IDataInput;
+   import flash.utils.ByteArray;
    
    public class InvitedToGuild extends IncomingMessage
    {
@@ -15,7 +15,7 @@ package kabam.rotmg.messaging.impl.incoming
          super(id,callback);
       }
       
-      override public function parseFromInput(data:IDataInput) : void
+      override public function parseFromInput(data:ByteArray) : void
       {
          this.name_ = data.readUTF();
          this.guildName_ = data.readUTF();

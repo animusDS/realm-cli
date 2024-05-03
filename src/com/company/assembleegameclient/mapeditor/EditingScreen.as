@@ -18,7 +18,9 @@ package com.company.assembleegameclient.mapeditor
    import flash.net.FileFilter;
    import flash.net.FileReference;
    import flash.utils.ByteArray;
-   import kabam.lib.json.JsonParser;
+import flash.utils.Endian;
+
+import kabam.lib.json.JsonParser;
    import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.ui.view.components.ScreenBase;
    import net.hires.debug.Stats;
@@ -255,6 +257,7 @@ package com.company.assembleegameclient.mapeditor
          var dict:Object = {};
          var entries:Array = [];
          var byteArray:ByteArray = new ByteArray();
+         byteArray.endian = Endian.LITTLE_ENDIAN;
          for(var yi:int = bounds.y; yi < bounds.bottom; yi++)
          {
             for(xi = bounds.x; xi < bounds.right; xi++)
@@ -365,6 +368,7 @@ package com.company.assembleegameclient.mapeditor
          this.commandQueue_.clear();
          var dict:Array = jm["dict"];
          var byteArray:ByteArray = Base64.decodeToByteArray(jm["data"]);
+         byteArray.endian = Endian.LITTLE_ENDIAN;
          byteArray.uncompress();
          for(var yi:int = bounds.y; yi < bounds.bottom; yi++)
          {

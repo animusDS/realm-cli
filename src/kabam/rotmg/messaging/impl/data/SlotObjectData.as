@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.data
 {
-   import flash.utils.IDataInput;
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
+   import flash.utils.ByteArray;
    
    public class SlotObjectData
    {
@@ -18,14 +18,14 @@ package kabam.rotmg.messaging.impl.data
          super();
       }
       
-      public function parseFromInput(data:IDataInput) : void
+      public function parseFromInput(data:ByteArray) : void
       {
          this.objectId_ = data.readInt();
          this.slotId_ = data.readUnsignedByte();
          this.objectType_ = data.readShort();
       }
       
-      public function writeToOutput(data:IDataOutput) : void
+      public function writeToOutput(data:ByteArray) : void
       {
          data.writeInt(this.objectId_);
          data.writeByte(this.slotId_);

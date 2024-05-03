@@ -1,8 +1,8 @@
 package kabam.rotmg.messaging.impl.data
 {
    import com.company.assembleegameclient.util.FreeList;
-   import flash.utils.IDataInput;
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
+   import flash.utils.ByteArray;
    
    public class ObjectStatusData
    {
@@ -21,7 +21,7 @@ package kabam.rotmg.messaging.impl.data
          super();
       }
       
-      public function parseFromInput(data:IDataInput) : void
+      public function parseFromInput(data:ByteArray) : void
       {
          var s:int = 0;
          this.objectId_ = data.readInt();
@@ -42,7 +42,7 @@ package kabam.rotmg.messaging.impl.data
          }
       }
       
-      public function writeToOutput(data:IDataOutput) : void
+      public function writeToOutput(data:ByteArray) : void
       {
          data.writeInt(this.objectId_);
          this.pos_.writeToOutput(data);

@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.outgoing
 {
    import flash.utils.ByteArray;
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
    
    public class Hello extends OutgoingMessage
    {
@@ -23,7 +23,7 @@ package kabam.rotmg.messaging.impl.outgoing
          super(id,callback);
       }
       
-      override public function writeToOutput(data:IDataOutput) : void
+      override public function writeToOutput(data:ByteArray) : void
       {
          data.writeUTF(this.buildVersion_);
          data.writeInt(this.gameId_);

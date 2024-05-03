@@ -7,7 +7,9 @@ package kabam.lib.net.impl
    import flash.events.SecurityErrorEvent;
    import flash.net.Socket;
    import flash.utils.ByteArray;
-   import kabam.lib.net.api.MessageProvider;
+import flash.utils.Endian;
+
+import kabam.lib.net.api.MessageProvider;
    import org.osflash.signals.Signal;
    
    public class SocketServer
@@ -53,6 +55,10 @@ package kabam.lib.net.impl
       {
          this.addListeners();
          this.messageLen = -1;
+
+         this.data.endian = Endian.LITTLE_ENDIAN;
+         this.socket.endian = Endian.LITTLE_ENDIAN;
+
          this.socket.connect(server,port);
       }
       

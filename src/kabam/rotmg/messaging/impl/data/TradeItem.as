@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.data
 {
-   import flash.utils.IDataInput;
+   import flash.utils.ByteArray;
    
    public class TradeItem
    {
@@ -19,7 +19,7 @@ package kabam.rotmg.messaging.impl.data
          super();
       }
       
-      public function parseFromInput(data:IDataInput) : void
+      public function parseFromInput(data:ByteArray) : void
       {
          this.item_ = data.readInt();
          this.slotType_ = data.readInt();

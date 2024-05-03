@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.incoming
 {
-   import flash.utils.IDataInput;
+   import flash.utils.ByteArray;
    
    public class NameResult extends IncomingMessage
    {
@@ -15,7 +15,7 @@ package kabam.rotmg.messaging.impl.incoming
          super(id,callback);
       }
       
-      override public function parseFromInput(data:IDataInput) : void
+      override public function parseFromInput(data:ByteArray) : void
       {
          this.success_ = data.readBoolean();
          this.errorText_ = data.readUTF();

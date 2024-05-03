@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.data
 {
-   import flash.utils.IDataInput;
+   import flash.utils.ByteArray;
    
    public class ObjectData
    {
@@ -16,7 +16,7 @@ package kabam.rotmg.messaging.impl.data
          super();
       }
       
-      public function parseFromInput(data:IDataInput) : void
+      public function parseFromInput(data:ByteArray) : void
       {
          this.objectType_ = data.readUnsignedShort();
          this.status_.parseFromInput(data);

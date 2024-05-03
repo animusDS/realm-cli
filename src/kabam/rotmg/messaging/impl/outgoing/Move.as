@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.outgoing
 {
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
    import kabam.rotmg.messaging.impl.data.MoveRecord;
    import kabam.rotmg.messaging.impl.data.WorldPosData;
    
@@ -23,7 +23,7 @@ package kabam.rotmg.messaging.impl.outgoing
          super(id,callback);
       }
       
-      override public function writeToOutput(data:IDataOutput) : void
+      override public function writeToOutput(data:ByteArray) : void
       {
          data.writeInt(this.tickId_);
          data.writeInt(this.time_);

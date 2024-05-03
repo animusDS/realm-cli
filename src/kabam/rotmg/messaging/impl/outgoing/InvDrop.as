@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.outgoing
 {
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
    import kabam.rotmg.messaging.impl.data.SlotObjectData;
    
    public class InvDrop extends OutgoingMessage
@@ -15,7 +15,7 @@ package kabam.rotmg.messaging.impl.outgoing
          super(id,callback);
       }
       
-      override public function writeToOutput(data:IDataOutput) : void
+      override public function writeToOutput(data:ByteArray) : void
       {
          this.slotObject_.writeToOutput(data);
       }

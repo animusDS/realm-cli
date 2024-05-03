@@ -1,7 +1,7 @@
 package kabam.lib.net.impl
 {
-   import flash.utils.IDataInput;
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
+   import flash.utils.ByteArray;
    
    public class Message
    {
@@ -27,11 +27,11 @@ package kabam.lib.net.impl
          this.callback = callback;
       }
       
-      public function parseFromInput(data:IDataInput) : void
+      public function parseFromInput(data:ByteArray) : void
       {
       }
       
-      public function writeToOutput(data:IDataOutput) : void
+      public function writeToOutput(data:ByteArray) : void
       {
       }
       

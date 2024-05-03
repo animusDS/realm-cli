@@ -1,6 +1,6 @@
 package kabam.rotmg.messaging.impl.incoming
 {
-   import flash.utils.IDataInput;
+   import flash.utils.ByteArray;
    
    public class TradeAccepted extends IncomingMessage
    {
@@ -17,7 +17,7 @@ package kabam.rotmg.messaging.impl.incoming
          super(id,callback);
       }
       
-      override public function parseFromInput(data:IDataInput) : void
+      override public function parseFromInput(data:ByteArray) : void
       {
          var i:int = 0;
          this.myOffer_.length = 0;

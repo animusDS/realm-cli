@@ -2,7 +2,7 @@ package kabam.rotmg.messaging.impl.incoming
 {
    import flash.display.BitmapData;
    import flash.utils.ByteArray;
-   import flash.utils.IDataInput;
+   import flash.utils.ByteArray;
    
    public class Pic extends IncomingMessage
    {
@@ -15,7 +15,7 @@ package kabam.rotmg.messaging.impl.incoming
          super(id,callback);
       }
       
-      override public function parseFromInput(data:IDataInput) : void
+      override public function parseFromInput(data:ByteArray) : void
       {
          var width:int = data.readInt();
          var height:int = data.readInt();

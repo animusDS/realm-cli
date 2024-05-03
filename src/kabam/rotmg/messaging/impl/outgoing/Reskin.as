@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.outgoing
 {
    import com.company.assembleegameclient.objects.Player;
-   import flash.utils.IDataOutput;
+   import flash.utils.ByteArray;
    
    public class Reskin extends OutgoingMessage
    {
@@ -16,7 +16,7 @@ package kabam.rotmg.messaging.impl.outgoing
          super(id,callback);
       }
       
-      override public function writeToOutput(data:IDataOutput) : void
+      override public function writeToOutput(data:ByteArray) : void
       {
          data.writeInt(this.skinID);
       }
