@@ -1330,15 +1330,15 @@ import kabam.rotmg.ui.view.NotEnoughGoldDialog;
          }
       }
       
-      private function onGoto(goto:Goto) : void
+      private function onGoto(gotoPkt:Goto) : void
       {
          this.gotoAck(this.gs_.lastUpdate_);
-         var go:GameObject = this.gs_.map.goDict_[goto.objectId_];
+         var go:GameObject = this.gs_.map.goDict_[gotoPkt.objectId_];
          if(go == null)
          {
             return;
          }
-         go.onGoto(goto.pos_.x_,goto.pos_.y_,this.gs_.lastUpdate_);
+         go.onGoto(gotoPkt.pos_.x_,gotoPkt.pos_.y_,this.gs_.lastUpdate_);
       }
       
       private function updateGameObject(go:GameObject, stats:Vector.<StatData>, isMyObject:Boolean) : void
